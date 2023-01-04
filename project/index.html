@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,100;1,400;1,900&family=Noto+Nastaliq+Urdu:wght@600&family=Seymour+One&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,100;1,400;1,900&family=Noto+Nastaliq+Urdu:wght@600&family=Seymour+One&display=swap'); </style>
+    <style>
+        .judul{
+            font-family: 'Seymour One', sans-serif;
+        }
+        #company{
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img id="foto" src="foto.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title judul" id="name">{nama}</h5>
+                        <p class="card-text" >
+                        Perusahaan : <span id="company">{company}</span> 
+                        </p>
+                        <p class="card-text" >
+                        Blog : <span id="bio">{bio}</span> 
+                        </p>
+                        <p class="card-text" >
+                        Lokasi : <span id="location">{location}</span> 
+                        </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+          </div>      
+        </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+        var url = "https://api.github.com/users/antonarizal";
+        fetch(url).then(response => response.json())
+        .then(function(data){
+            console.log(data)
+            document.getElementById("name").innerHTML = data.name
+            document.getElementById("company").innerHTML = data.company
+            document.getElementById("bio").innerHTML = data.bio
+            document.getElementById("location").innerHTML = data.location
+            document.getElementById("foto").src = data.avatar_url
+
+        }).catch(function(error){
+            console.log(error)
+
+        });
+
+    // $.get("https://api.github.com/users/antonarizal",function(response){
+    //     console.log(response)
+    //     $("#nama").html(response.name)
+    //     $("#company").html(response.company)
+    //     $("#bio").html(response.bio)
+    //     $("#location").html(response.location)
+    // })
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nama" style="position:absolute;">Anton</div>
+    <br>
+    <div id="alamat">Tulungagung</div>
+    Nama Siswa: <input id="nama_siswa" type="text" name="nama"><br>
+    Alamat : <textarea id="alamat_siswa" name="alamat" id="" cols="30" rows="10"></textarea><br>
+    jenis kelamin : <input name="sex" type="radio"> Laki-laki <input name="sex" type="radio"> perempuan<br>
+    Setuju : <input name="setuju" type="checkbox"> ya
+    <br>
+    Jurusan <select name="" id="">
+        <option value="">TKJ</option>
+        <option value="">TSM</option>
+        <option value="">DKV</option>
+
+    </select>
+<br>
+<br>
+    <button onclick="data.formulir()">Klik formulir</button>
+    <button onclick="data.geser()">Klik Geser</button>
+<script>
+    let data = {
+        "nama" : "Rizki",
+        "alamat" : "Blitar",
+         melihat :function(){
+            alert("sedang melihat "+this.nama)
+        },
+         menendang :function(){
+            alert("sedang menendang "+this.nama)
+        },
+         geser :function(){
+            document.getElementById("nama").style.left = "100px";
+            document.getElementById("nama").style.color = "blue";
+        },
+            formulir : function(){
+                var nama_siswa = document.getElementById("nama_siswa").value;
+                var alamat_siswa = document.getElementById("alamat_siswa").value;
+                alert("nama siswa =" + nama_siswa + ", Alamat = "+ alamat_siswa)
+
+
+            }
+        
+    }
+    console.log(data)
+    document.getElementById("nama").innerHTML = data.nama
+    document.getElementById("alamat").innerHTML = data.alamat
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+1. folder project
+2. file index.html
+3. tambahkan css dari boostrap <link href="--urlcss"> CDN
+4. tambahkan library jquery (<script src="jqry">) CDN
+5. membuat tampilan web 
+6. fetch / ajax / axios data API (https://api.github.com/users/antonarizal)
